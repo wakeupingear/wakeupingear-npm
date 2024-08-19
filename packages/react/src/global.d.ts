@@ -1,4 +1,4 @@
-// packages/components/src/global.d.ts
+// packages/react/src/global.d.ts
 
 declare module '*.css' {
     const content: { [className: string]: string };
