@@ -1,0 +1,25 @@
+{
+    "name": "@wakeupingear/react",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "style": "dist/index.css",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc && cp src/index.css dist/index.css"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.0",
+        "@types/react-transition-group": "^4.4.11",
+        "typescript": "^4.5.0"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "react-transition-group": "^4.4.5"
+    }
+}
