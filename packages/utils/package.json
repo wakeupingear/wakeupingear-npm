@@ -11,5 +11,8 @@
     },
     "devDependencies": {
         "typescript": "^5.5.4"
-    }
+    },
+    "description": "Look at all them TypeScript files.",
+    "author": "Abby Farhat",
+    "license": "ISC"
 }

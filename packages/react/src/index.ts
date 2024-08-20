@@ -12,6 +12,8 @@ export { default as SubmitRow } from './components/SubmitRow';
 export { default as Button } from './components/Buttons';
 export * from './components/Icons';
 
+export * from '@radix-ui/themes';
+
 /**
  * To use the default styles, import the CSS file:
  * import '@wakeupingear/react/dist/index.css';
