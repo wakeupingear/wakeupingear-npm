@@ -6,21 +6,79 @@ on:
             - main
 
 jobs:
-    build:
+    publish-react:
+        name: Publish React
         runs-on: ubuntu-latest
+        if: contains(github.event.head_commit.message, 'react')
+        permissions:
+            contents: read
+            id-token: write
+        timeout-minutes: 10
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v4
+            - name: Checkout repository
+              uses: actions/checkout@v4
               with:
-                  node-version: '20'
-                  registry-url: 'https://registry.npmjs.org'
-            - run: npm ci
-            - run: npm run build
-            - run: npm run test
-            - name: Setup .npmrc file to publish to npm
-              run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+                  fetch-depth: 0
+
+            - name: Install Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: https://registry.npmjs.org/
+
+            - name: Install dependencies
+              run: npm install
+              shell: bash
+
+            - name: Print Environment Info
+              run: npx nx report
+              shell: bash
+            
+            - name: Build packages
+              run: npx nx build @wakeupingear/react
+              shell: bash
+
+            - name: Publish packages
+              run: npx nx release publish --projects=@wakeupingear/react
+              shell: bash
               env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            - run: npx lerna publish from-package --yes
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: true
+    publish-utils:
+        name: Publish Utils
+        runs-on: ubuntu-latest
+        if: contains(github.event.head_commit.message, 'utils')
+        permissions:
+            contents: read
+            id-token: write
+        timeout-minutes: 10
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Install Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: https://registry.npmjs.org/
+
+            - name: Install dependencies
+              run: npm install
+              shell: bash
+
+            - name: Print Environment Info
+              run: npx nx report
+              shell: bash
+            
+            - name: Build packages
+              run: npx nx build @wakeupingear/utils
+              shell: bash
+
+            - name: Publish packages
+              run: npx nx release publish --projects=@wakeupingear/utils
+              shell: bash
               env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: true
