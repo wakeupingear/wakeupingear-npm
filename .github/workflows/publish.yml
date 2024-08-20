@@ -22,3 +22,5 @@ jobs:
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: npx lerna publish --yes --canary --force-publish
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
