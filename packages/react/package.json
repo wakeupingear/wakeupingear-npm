@@ -8,7 +8,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsc && cp index.css dist/index.css"
+        "build": "rm -rf dist && bun build src/index.ts --outdir ./dist"
     },
     "peerDependencies": {
         "react": "^18.0.0"

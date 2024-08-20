@@ -29,7 +29,6 @@
             "npm run generate-readme"
         ]
     },
-    "dependencies": {},
     "repository": {
         "url": "github:wakeupingear/wakeupingear-npm",
         "type": "git"

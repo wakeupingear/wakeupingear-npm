@@ -7,7 +7,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsc"
+        "build": "rm -rf dist && bun build src/index.ts --outdir ./dist"
     },
     "devDependencies": {
         "typescript": "^5.5.4"

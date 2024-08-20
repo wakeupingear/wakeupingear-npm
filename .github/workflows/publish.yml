@@ -20,14 +20,12 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Install Node
-              uses: actions/setup-node@v4
+            - uses: oven-sh/setup-bun@v2
               with:
-                  node-version: 20
-                  registry-url: https://registry.npmjs.org/
+                  bun-version: latest
 
             - name: Install dependencies
-              run: npm install
+              run: bun install
               shell: bash
 
             - name: Print Environment Info
@@ -58,14 +56,12 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Install Node
-              uses: actions/setup-node@v4
+            - uses: oven-sh/setup-bun@v2
               with:
-                  node-version: 20
-                  registry-url: https://registry.npmjs.org/
+                  bun-version: latest
 
             - name: Install dependencies
-              run: npm install
+              run: bun install
               shell: bash
 
             - name: Print Environment Info
