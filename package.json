@@ -8,16 +8,19 @@
         "build": "lerna run build",
         "test": "lerna run test",
         "publish": "lerna publish",
-        "prepare": "husky install",
         "generate-readme": "ts-node scripts/generate-readme.ts"
     },
+    "pre-commit": [
+        "generate-readme",
+        "test"
+    ],
     "devDependencies": {
         "@commitlint/cli": "^19.4.0",
         "@commitlint/config-conventional": "^19.2.2",
         "@types/node": "^22.4.1",
-        "husky": "^9.1.4",
         "lerna": "^4.0.0",
         "lint-staged": "^15.2.9",
+        "pre-commit": "^1.2.2",
         "ts-node": "^10.9.2",
         "typescript": "^4.9.5"
     },
