@@ -1,18 +1,18 @@
 {
-    "name": "@wakeupingear/utils",
-    "version": "1.0.3",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "tsc"
-    },
-    "devDependencies": {
-        "typescript": "^5.5.4"
-    },
-    "description": "Look at all them TypeScript files.",
-    "author": "Abby Farhat",
-    "license": "ISC"
+  "name": "@wakeupingear/utils",
+  "version": "1.0.4",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "description": "Look at all them TypeScript files.",
+  "author": "Abby Farhat",
+  "license": "ISC"
 }
