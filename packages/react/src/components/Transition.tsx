@@ -1,3 +1,4 @@
+'use client';
 import clsx from 'clsx';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';

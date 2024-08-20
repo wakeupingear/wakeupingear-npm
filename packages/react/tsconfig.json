@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2021",
     "module": "commonjs",
-    "jsx": "preserve",
+    "jsx": "react-jsxdev",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

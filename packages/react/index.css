@@ -1,4 +1,4 @@
-@import '../../node_modules/@radix-ui/themes/styles.css';
+@import '@radix-ui/themes/styles.css';
 
 * {
     box-sizing: border-box;

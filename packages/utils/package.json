@@ -1,13 +1,14 @@
 {
     "name": "@wakeupingear/utils",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "rm -rf dist && bun build src/index.ts --outdir ./dist"
+        "build": "rm -rf dist && tsc",
+        "publish": "npm run build && NODE_AUTH_TOKEN=$(cat ../../.env | grep NPM_TOKEN | cut -d '=' -f2) bunx nx release publish --projects=@wakeupingear/utils --foreground-scripts false"
     },
     "devDependencies": {
         "typescript": "^5.5.4"

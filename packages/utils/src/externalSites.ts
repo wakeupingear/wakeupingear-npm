@@ -20,7 +20,7 @@ export type ExternalSite =
     | 'wikipedia'
     | 'itch';
 
-type ExternalSiteMetadata = {
+export type ExternalSiteMetadata = {
     urlPrefixes?: string[];
 };
 

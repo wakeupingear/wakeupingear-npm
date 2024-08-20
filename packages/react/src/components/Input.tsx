@@ -1,3 +1,4 @@
+'use client';
 import { InputHTMLAttributes } from 'react';
 import useOnSubmit from '../hooks/useOnSubmit';
 
