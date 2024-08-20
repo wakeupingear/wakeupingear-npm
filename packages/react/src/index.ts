@@ -8,6 +8,9 @@ export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as Expandable } from './components/Expandable';
 export { default as Input } from './components/Input';
 export { default as Transition } from './components/Transition';
+export { default as SubmitRow } from './components/SubmitRow';
+export { default as Button } from './components/Buttons';
+export * from './components/Icons';
 
 /**
  * To use the default styles, import the CSS file:

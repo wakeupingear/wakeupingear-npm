@@ -6,6 +6,8 @@ Generally unopinionated about styling beyond basic structure.
 
 ## Components
 
+### `<Button />`
+
 ### `<Expandable />`
 Wrapper component that animates the expansion of its children.
 The component shows/hides when the truthiness of the `children` prop changes. When `false`, the last truthy value of `children` is displayed during the closing animation.
@@ -24,9 +26,45 @@ The component shows/hides when the truthiness of the `children` prop changes. Wh
 The JSX element.
  
 
+### `<Icon_Loading />`
+
 ### `<Input />`
 
+### `<SubmitRow />`
+
 ### `<Transition />`
+
+## Variables
+
+### `<Icon_Admin />`
+
+### `<Icon_Arrow />`
+
+### `<Icon_Background />`
+
+### `<Icon_Camera />`
+
+### `<Icon_Close />`
+
+### `<Icon_Delete />`
+
+### `<Icon_Edit />`
+
+### `<Icon_Game />`
+
+### `<Icon_Image />`
+
+### `<Icon_Profile />`
+
+### `<Icon_Question />`
+
+### `<Icon_Search />`
+
+### `<Icon_Settings />`
+
+### `<Icon_Style />`
+
+### `<Icon_Widgets />`
 
 
 
