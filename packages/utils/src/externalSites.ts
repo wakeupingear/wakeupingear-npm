@@ -43,27 +43,30 @@ export const EXTERNAL_SITE_METADATA: Record<
         urlPrefixes: ['https://twitter.com/', 'https://x.com/'],
     },
     youtube: {
-        urlPrefixes: ['https://youtube.com/', 'https://www.youtube.com/'],
+        urlPrefixes: ['https://youtube.com/'],
     },
     steam: { urlPrefixes: ['https://store.steampowered.com/app/'] },
     apple: { urlPrefixes: ['https://apps.apple.com/us/app/'] },
     linkedin: {
-        urlPrefixes: ['https://www.linkedin.com/company/'],
+        urlPrefixes: [
+            'https://linkedin.com/company/',
+            'https://linkedin.com/in/',
+        ],
     },
     tiktok: { urlPrefixes: ['https://tiktok.com/@'] },
     email: { urlPrefixes: ['mailto:'] },
     spotify: { urlPrefixes: ['https://open.spotify.com/'] },
-    xbox: { urlPrefixes: ['https://www.xbox.com/en-us/games/'] },
+    xbox: { urlPrefixes: ['https://xbox.com/en-us/games/'] },
     wikipedia: { urlPrefixes: ['https://wikipedia.org/'] },
-    itch: { urlPrefixes: ['https://itch.io/'] },
+    itch: { urlPrefixes: ['itch.io'] },
 };
 
 export const getExternalSite = (url: string): ExternalSite | null => {
-    const lower = url.toLowerCase();
+    const lower = url.toLowerCase().replaceAll('www.', '');
     return (
         (Object.entries(EXTERNAL_SITE_METADATA).find(
             ([_, value]) =>
-                value.urlPrefixes?.some((prefix) => lower.startsWith(prefix)) ??
+                value.urlPrefixes?.some((prefix) => lower.includes(prefix)) ??
                 false
         )?.[0] as ExternalSite) ?? null
     );

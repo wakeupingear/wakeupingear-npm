@@ -64,10 +64,9 @@ export const Icon_Arrow = BiRightArrowAlt;
 export const Icon_Camera = BiCamera;
 
 export function Icon_Loading(props: LoaderSizeProps) {
-    const [theme] = useTheme();
-    return (
-        <HashLoader color={theme === 'light' ? 'black' : 'white'} {...props} />
-    );
+    const color =
+        props.color || (useTheme()[0] === 'light' ? 'black' : 'white');
+    return <HashLoader color={color} {...props} />;
 }
 
 export { ExternalSite } from '@wakeupingear/utils';
