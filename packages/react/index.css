@@ -24,3 +24,19 @@
 .transition-fade-enter-active {
     transition: all 150ms ease-in-out;
 }
+
+.wuig-button > * {
+    transition: all 150ms ease-in-out;
+}
+
+.wuig-button > *:last-child {
+    opacity: 0;
+}
+
+.wuig-button-loading > * {
+    opacity: 0;
+}
+
+.wuig-button-loading > *:last-child {
+    opacity: 1;
+}

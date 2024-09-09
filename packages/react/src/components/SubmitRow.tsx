@@ -1,8 +1,7 @@
 'use client';
 import { ReactNode } from 'react';
-import Button, { ButtonProps } from './Buttons';
+import Button, { ButtonProps } from './Button';
 import clsx from 'clsx';
-import { Icon_Arrow } from './Icons';
 import Input, { InputProps } from './Input';
 import Expandable from './Expandable';
 
@@ -79,7 +78,7 @@ export default function SubmitRow({
                             className
                         )}
                     >
-                        {buttonChildren || <Icon_Arrow size={30} />}
+                        {buttonChildren || 'Submit'}
                     </Button>
                 )}
             </div>
@@ -103,7 +102,7 @@ export default function SubmitRow({
                             className
                         )}
                     >
-                        {buttonChildren || <Icon_Arrow size={24} />}
+                        {buttonChildren || 'Submit'}
                     </Button>
                 )}
             </div>

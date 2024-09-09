@@ -32,41 +32,11 @@ The JSX element.
 
 ### `<Input />`
 
+### `<Label />`
+
 ### `<SubmitRow />`
 
 ### `<Transition />`
-
-## Variables
-
-### `<Icon_Admin />`
-
-### `<Icon_Arrow />`
-
-### `<Icon_Background />`
-
-### `<Icon_Camera />`
-
-### `<Icon_Close />`
-
-### `<Icon_Delete />`
-
-### `<Icon_Edit />`
-
-### `<Icon_Game />`
-
-### `<Icon_Image />`
-
-### `<Icon_Profile />`
-
-### `<Icon_Question />`
-
-### `<Icon_Search />`
-
-### `<Icon_Settings />`
-
-### `<Icon_Style />`
-
-### `<Icon_Widgets />`
 
 
 

@@ -7,10 +7,14 @@ export { default as useWindowSize } from './hooks/useWindowSize';
 // Components
 export { default as Expandable } from './components/Expandable';
 export { default as Input } from './components/Input';
+export { default as Label } from './components/Label';
 export { default as Transition } from './components/Transition';
 export { default as SubmitRow } from './components/SubmitRow';
-export { default as Button } from './components/Buttons';
+export { default as Button } from './components/Button';
 export * from './components/Icons';
+
+// Types
+export * from './types';
 
 export * from '@radix-ui/themes';
 

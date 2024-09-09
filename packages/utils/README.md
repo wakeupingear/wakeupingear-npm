@@ -28,6 +28,8 @@ Look at all them TypeScript files.
 
 ## Types
 
+### `ExternalSiteMetadata`
+
 ### `ExternalSite`
 
 
