@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const useOnSubmit = <T>(_onClick?: (e: T) => any | Promise<any>) => {
-    const [loading, setLoading] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
 
     const onSubmit = async (e: T) => {
         const possiblePromise = _onClick?.(e);
@@ -9,13 +9,13 @@ const useOnSubmit = <T>(_onClick?: (e: T) => any | Promise<any>) => {
             typeof possiblePromise === 'object' &&
             typeof possiblePromise?.then === 'function'
         ) {
-            setLoading(true);
+            setSubmitting(true);
             await possiblePromise;
-            setLoading(false);
+            setSubmitting(false);
         }
     };
 
-    return { submitting: loading, onSubmit };
+    return { submitting, onSubmit };
 };
 
 export default useOnSubmit;

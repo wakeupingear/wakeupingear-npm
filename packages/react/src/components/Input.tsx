@@ -1,11 +1,14 @@
 'use client';
+
 import { InputHTMLAttributes } from 'react';
 import useOnSubmit from '../hooks/useOnSubmit';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+    extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
     canEnter?: boolean;
     onEnter?: () => void | Promise<void>;
     onText?: (text: string) => any;
+    componentType?: 'input' | 'textarea';
 }
 
 export default function Input({
@@ -16,6 +19,7 @@ export default function Input({
     onChange: _onChange,
     onKeyDown: _onKeyDown,
     className,
+    componentType = 'input',
     ...rest
 }: InputProps) {
     const { onSubmit: onEnter, submitting } = useOnSubmit(_onEnter);
@@ -29,13 +33,15 @@ export default function Input({
         ? (e) => onText(e.target.value)
         : _onChange;
 
-    return (
-        <input
-            onKeyDown={onKeyDown}
-            onChange={onChange}
-            disabled={disabled}
-            {...rest}
-            className={className}
-        />
-    );
+    const props = {
+        onKeyDown,
+        onChange,
+        disabled,
+        ...rest,
+        className,
+    };
+
+    if (componentType === 'textarea') return <textarea {...props} />;
+
+    return <input {...props} />;
 }

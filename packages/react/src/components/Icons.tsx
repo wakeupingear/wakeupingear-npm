@@ -1,42 +1,3 @@
-import {
-    BiGame,
-    BiGridAlt,
-    BiImage,
-    BiImageAlt,
-    BiMask,
-    BiPaint,
-    BiPencil,
-    BiQuestionMark,
-    BiSearch,
-    BiSliderAlt,
-    BiTrashAlt,
-    BiUser,
-    BiX,
-    BiRightArrowAlt,
-    BiCamera,
-} from 'react-icons/bi';
-import { BsSubstack } from 'react-icons/bs';
-import {
-    FaApple,
-    FaArtstation,
-    FaDiscord,
-    FaGithub,
-    FaItchIo,
-    FaKickstarter,
-    FaLinkedin,
-    FaMastodon,
-    FaPatreon,
-    FaRegEnvelope,
-    FaSpotify,
-    FaSteam,
-    FaTiktok,
-    FaTrophy,
-    FaTwitch,
-    FaTwitter,
-    FaWikipediaW,
-    FaXbox,
-    FaYoutube,
-} from 'react-icons/fa';
 import { HashLoader } from 'react-spinners';
 import { LoaderSizeProps } from 'react-spinners/helpers/props';
 import useTheme from '../hooks/useTheme';
@@ -45,23 +6,53 @@ import {
     ExternalSite,
     ExternalSiteMetadata,
 } from '@wakeupingear/utils';
-import { IconType } from 'react-icons';
+import {
+    IconDeviceGamepad2,
+    IconUser,
+    IconSettings,
+    IconSearch,
+    IconX,
+    IconPencil,
+    IconTrash,
+    IconQuestionMark,
+    IconBrush,
+    IconPhoto,
+    IconArrowRight,
+    IconCamera,
+    IconProps,
+    Icon,
+    IconBrandDiscord,
+    IconBrandGithub,
+    IconBrandKickstarter,
+    IconBrandMastodon,
+    IconBrandPatreon,
+    IconTrophy,
+    IconBrandTwitch,
+    IconBrandTwitter,
+    IconBrandYoutube,
+    IconBrandSteam,
+    IconBrandApple,
+    IconBrandLinkedin,
+    IconBrandTiktok,
+    IconMail,
+    IconBrandSpotify,
+    IconBrandXbox,
+    IconBrandWikipedia,
+    IconBrandItch,
+} from '@tabler/icons-react';
 
-export const Icon_Game = BiGame;
-export const Icon_Profile = BiUser;
-export const Icon_Admin = BiMask;
-export const Icon_Settings = BiSliderAlt;
-export const Icon_Search = BiSearch;
-export const Icon_Close = BiX;
-export const Icon_Edit = BiPencil;
-export const Icon_Delete = BiTrashAlt;
-export const Icon_Question = BiQuestionMark;
-export const Icon_Widgets = BiGridAlt;
-export const Icon_Style = BiPaint;
-export const Icon_Background = BiImage;
-export const Icon_Image = BiImageAlt;
-export const Icon_Arrow = BiRightArrowAlt;
-export const Icon_Camera = BiCamera;
+export const Icon_Game = IconDeviceGamepad2;
+export const Icon_Profile = IconUser;
+export const Icon_Settings = IconSettings;
+export const Icon_Search = IconSearch;
+export const Icon_Close = IconX;
+export const Icon_Edit = IconPencil;
+export const Icon_Delete = IconTrash;
+export const Icon_Question = IconQuestionMark;
+export const Icon_Style = IconBrush;
+export const Icon_Image = IconPhoto;
+export const Icon_Arrow = IconArrowRight;
+export const Icon_Camera = IconCamera;
 
 export function Icon_Loading(props: LoaderSizeProps) {
     const color =
@@ -72,41 +63,43 @@ export function Icon_Loading(props: LoaderSizeProps) {
 export { ExternalSite } from '@wakeupingear/utils';
 
 type ExclusiveExternalSiteReactMetadata = {
-    icon: IconType;
+    icon: React.ForwardRefExoticComponent<
+        IconProps & React.RefAttributes<Icon>
+    >;
 };
 export type ExternalSiteReactMetadata = ExternalSiteMetadata &
     ExclusiveExternalSiteReactMetadata;
 
 const REACT_METADATA: Record<ExternalSite, ExclusiveExternalSiteReactMetadata> =
     {
-        artstation: { icon: FaArtstation },
-        discord: { icon: FaDiscord },
-        github: { icon: FaGithub },
+        artstation: { icon: IconBrush },
+        discord: { icon: IconBrandDiscord },
+        github: { icon: IconBrandGithub },
         kickstarter: {
-            icon: FaKickstarter,
+            icon: IconBrandKickstarter,
         },
-        mastodon: { icon: FaMastodon },
-        patreon: { icon: FaPatreon },
-        speedrun: { icon: FaTrophy },
-        substack: { icon: BsSubstack },
-        twitch: { icon: FaTwitch },
+        mastodon: { icon: IconBrandMastodon },
+        patreon: { icon: IconBrandPatreon },
+        speedrun: { icon: IconTrophy },
+        substack: { icon: IconPencil },
+        twitch: { icon: IconBrandTwitch },
         twitter: {
-            icon: FaTwitter,
+            icon: IconBrandTwitter,
         },
         youtube: {
-            icon: FaYoutube,
+            icon: IconBrandYoutube,
         },
-        steam: { icon: FaSteam },
-        apple: { icon: FaApple },
+        steam: { icon: IconBrandSteam },
+        apple: { icon: IconBrandApple },
         linkedin: {
-            icon: FaLinkedin,
+            icon: IconBrandLinkedin,
         },
-        tiktok: { icon: FaTiktok },
-        email: { icon: FaRegEnvelope },
-        spotify: { icon: FaSpotify },
-        xbox: { icon: FaXbox },
-        wikipedia: { icon: FaWikipediaW },
-        itch: { icon: FaItchIo },
+        tiktok: { icon: IconBrandTiktok },
+        email: { icon: IconMail },
+        spotify: { icon: IconBrandSpotify },
+        xbox: { icon: IconBrandXbox },
+        wikipedia: { icon: IconBrandWikipedia },
+        itch: { icon: IconBrandItch },
     };
 
 export const EXTERNAL_SITE_METADATA: Record<
