@@ -20,7 +20,7 @@ export default function Button({
     loadingElement = <Icon_Loading color="white" size={30} />,
     onClick: _onClick,
     className,
-    linkProps = {},
+    linkProps,
     ButtonComponent,
     ...rest
 }: ButtonProps) {
